@@ -1,0 +1,497 @@
+@charset "utf-8";
+
+header{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100px;
+  padding: 0 133px;
+  box-sizing: border-box;
+  z-index: 9999;
+  transition: all 0.2s ease-in-out;
+
+  &.nav-up{top: -100px;}
+  &.scrolled{
+    background-color: #fff;
+
+    > div > p{color: #000;}
+    > div > p > a{color: #000;}
+  }
+
+  > div{
+    width: 100%; height: 100%;
+
+
+    > p{
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 100px;
+      transition: all 0.2s ease-in-out;
+
+      > a{
+        color: #fff;
+        font-weight: 700;
+        text-decoration: underline;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+
+
+main{
+  width: 100%;
+
+  > .intro-wrap{
+    position: relative;
+    width: 100%; height: 100dvh;
+    overflow: hidden;
+
+    > .intro-inner{
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, .4);
+      z-index: 10;
+
+      > .txt-box{
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 20rem);
+        color: #fff;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 55px;
+
+        > .tit{
+          width: 100%;
+
+          > p{
+            overflow: hidden;
+
+            > span{
+              display: inline-block;
+              font-family: 'SeoulNotice';
+              font-size: 4rem;
+              line-height: 130%;
+              font-weight: 800;
+              color: #fff;
+              opacity: 0;
+              transform: translateY(10rem);
+              transition: all 0.7s ease;
+
+              &.up{
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+          }
+        }
+
+        > p{
+          overflow: hidden;
+
+          > span{
+            display: inline-block;
+            font-size: 1rem;
+            color: #fff;
+            white-space: pre;
+            line-height: 160%;
+            opacity: 0;
+            transform: translateY(10rem);
+            transition: all 0.7s ease;
+
+            &.up{
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+
+    > .img-wrap{
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+
+      > img{
+        width: 100%;
+        transform: scale(1.2);
+        transition: all .9s ease-out;
+
+        &.active{transform: scale(1);}
+      }
+    }
+  }
+
+
+
+
+
+  .resize-wrap {
+    width: 100%;
+    height: 500dvh;
+    position: relative;
+
+    > .sticky-wrap {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+
+      > .img-wrap {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 559px; height: 339px;
+        border-radius: 1.5rem;
+        overflow: hidden;
+
+        > .dark {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: rgba(0, 0, 0, 0.65);
+          opacity: 0;
+        }
+
+        > img {
+          position: absolute;
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100vw; height: 100vh;
+          object-fit: cover;
+        }
+      }
+
+      > .tit-wrap {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 80vh; /* .up 과 .down 사이 간격 (충분히 벌림) */
+        pointer-events: none;
+        will-change: transform;
+
+        > .scroll-txt {
+          width: 100%;
+          text-align: center;
+          pointer-events: auto;
+
+          &.up {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 35px;
+
+            > span {
+              font-size: 1.2rem;
+              color: #fff;
+              line-height: 160%;
+            }
+            > p {
+              font-size: 3.5rem;
+              line-height: 130%;
+              font-weight: 700;
+              color: #fff;
+              white-space: pre-line;
+            }
+          }
+
+          &.down {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+
+            > p {
+              font-size: 2.1rem;
+              line-height: 140%;
+              font-weight: 600;
+              white-space: pre-line;
+              text-align: center;
+              background: linear-gradient(to right, #ffffff 50%, rgba(255, 255, 255, 0.25) 50%);
+              background-size: 200% 100%;
+              background-position: 100% 0;
+              
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              will-change: background-position;
+            }
+
+            > .point-btn {
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+  > .ship-wrap{
+    width: 100%;
+    padding: 15rem 0;
+    background: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+    > .scroll-txt{
+      width: 100%; height: auto;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      > p{
+        color: #fff;
+        font-size: 15rem;
+        font-weight: normal;
+        font-family: 'ClipArtKorea';
+        line-height: 1;
+        margin: 0;
+        white-space: nowrap;
+        text-transform: uppercase;
+        animation: infinite 30s linear infinite;
+      }
+    }
+
+    > .introduce{
+      width: 100%;
+      padding: 15rem 30rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 55px;
+
+      > span{
+        font-size: 1.1rem;
+        font-weight: 800;
+        line-height: 160%;
+      }
+
+      > h3{
+        font-size: 4rem;
+        line-height: 130%;
+        font-weight: 700;
+      }
+
+      > p{
+        font-size: 1.1rem;
+        line-height: 160%;
+      }
+    }
+
+    > .card-wrap{
+      width: 100%;
+      padding: 0 30rem;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      > .card{
+        position: relative;
+        width: 100%; height: 100%;
+        border-radius: 1rem;
+        padding: 3.5rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 17rem;
+        background: linear-gradient(180deg,rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, .9) 100%);
+        overflow: hidden;
+
+        &:last-child{margin-top: 15rem;}
+
+        > h3{
+          font-size: 2rem;
+          font-weight: 700;
+          color: #fff;
+          z-index: 10;
+        }
+
+        > p{
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 15px;
+          z-index: 10;
+
+          > span{
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 160%;
+            color: #fff;
+            white-space: pre;
+          }
+        }
+
+        > img{
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+        }
+      }
+    }
+  }
+
+
+
+
+
+  > .grid-wrap{
+    width: 100%;
+    padding: 15rem 23rem;
+    box-sizing: border-box;
+
+    > h2{
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    > .grid{
+      width: 100%;
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      > .inner{
+        border-radius: 1.5rem;
+        padding: 3.5rem;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 4rem;
+
+        &.left{
+          grid-row: span 2;
+          background: url(../img/career.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          > .button-wrap > a:nth-child(2) > div{transform: rotate(-45deg);}
+        }
+        &.top{background: #008233;}
+        &.bottom{background: #003087;}
+
+        > .tit{
+          width: 100%;
+
+          > p{
+            color: #fff;
+            font-size: 2.3rem;
+            font-weight: 700;
+          }
+          > span{
+            display: inline-block;
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 1.3rem;
+            line-height: 160%;
+            white-space: pre;
+          }
+        }
+
+        > .button-wrap{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 1rem;
+
+          > a{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover > div > p{transform: translateX(53px);}
+
+            > div{
+              width: 23px; height: 23px;
+              border: 2px solid #fff;
+              border-radius: 50%;
+              overflow: hidden;
+              margin-left: 15px;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              gap: 30px;
+
+              > p{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 23px; height: 23px;
+                flex-shrink: 0;
+                transition: all .2s ease;
+
+                > svg[data-lucide="arrow-right"]{
+                  color: #fff;
+                  stroke-width: 3;
+                  width: 15px; height: 15px;
+                }
+              }
+            }
+
+            &:nth-child(2) > span > svg{transform: rotate(-45deg);}
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+/* 공통 버튼 */
+.point-btn{
+  width: fit-content;
+  background: #003087;
+  border: 1px solid #003087;
+  padding: 1rem 1.7rem;
+  box-sizing: border-box;
+  border-radius: 1000px;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  > svg{
+    width: 18px; height: 18px;
+    stroke-width: 2;
+  }
+}
+
+
+
+
+
+@keyframes infinite{
+  0%{transform: translateX(0%);}
+  100%{transform: translateX(-100%);}
+}
